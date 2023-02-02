@@ -23,3 +23,37 @@ signal carry_tb : STD_LOGIC;
 signal clk_tb: std_logic;
 
 begin
+
+uut : half_adder port map (
+    x => x_tb,
+    y => y_tb,
+    sum => sum_tb,
+    carry => carry_tb);
+
+process 
+begin
+
+    clk_tb <= '1';
+    wait for 5ns;
+    clk_tb <= '0';
+    wait for 5ns;
+
+end process
+
+process
+    begin
+        x_tb <= '0';
+        y_tb <= '0';
+        wait for 10ns;
+        x_tb <= '0';
+        y_tb <= '1';
+        wait for 10ns;
+        x_tb <= '1';
+        y_tb <= '0';
+        wait for 10ns;
+        x_tb <= '1';
+        y_tb <= '1';
+        wait;
+end process;
+
+end Behavioral;
