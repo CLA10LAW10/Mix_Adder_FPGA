@@ -1,5 +1,12 @@
+// Lab 2
+// Mixed Language Adder
+// Author: Clayton Lawton
+// Date: February 3, 2023
+// ECE 524
+
 `timescale 1ns/1ps
 
+// Input and output assignment.
 module full_adder (
     input wire x,
     input wire y,
@@ -8,10 +15,13 @@ module full_adder (
     output wire carry_out
 );
 
+// Input / Output Types
 wire ha1_sum;
 wire ha1_carry;
 wire ha2_carry;
 
+// Instantiate Half Adders
+// Two Half Adders needed to make one full adder.
 half_adder ha1 (
     .x(x),
     .y(y),
