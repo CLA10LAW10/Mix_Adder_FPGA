@@ -1,5 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use std.env.stop;
 
 entity half_adder_tb is
 -- Port ( );
@@ -38,7 +39,7 @@ begin
     clk_tb <= '0';
     wait for 5ns;
 
-end process
+end process;
 
 process
     begin
@@ -53,7 +54,8 @@ process
         wait for 10ns;
         x_tb <= '1';
         y_tb <= '1';
-        wait;
+        wait for 10ns;
+        stop;
 end process;
 
 end Behavioral;
